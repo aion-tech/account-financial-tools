@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright 2024 Simone Rubino - Aion Tech
+  ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+  -->
+<odoo noupdate="1">
+    <record id="account_tax_lock_date_group_manager" model="res.groups">
+        <field name="name">Update tax lock date without restrictions</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting" />
+        <field
+            name="implied_ids"
+            eval="[
+                Command.link(ref('account.group_account_manager')),
+            ]"
+        />
+    </record>
+</odoo>
